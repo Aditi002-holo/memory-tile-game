@@ -33,7 +33,7 @@ function printTiles(): void {
     console.clear()
     const gridSize = 4
 
-    for(let i = 0; i < 16; i = i+ gridSize) {
+    for(let i = 0; i < tiles.length; i = i+ gridSize) {
         const row = tiles.slice(i, i + gridSize).map(tile => {
             if(tile.state === 'down')
                 return tile.index.toString().padStart(2, ' ')
