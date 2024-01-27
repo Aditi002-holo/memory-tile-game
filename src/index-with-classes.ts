@@ -7,7 +7,11 @@ type Tile = {
 }
 
 class Game {
-    tiles: Tile[] = []
+    readonly tiles: Tile[] = []
+
+    constructor(emojis: string[]) {
+        this.tiles = this.createTiles(emojis)
+    }
 
     // Method - createTiles
     createTiles(emojis: string[]): Tile[] {
@@ -88,6 +92,5 @@ class Game {
 }
 
 const inputTiles = ['🐱', '🐶', '🐹', '🐰', '🦊', '🐼', '🐣', '🦕']
-const game = new Game()
-game.createTiles(inputTiles)
+const game = new Game(inputTiles)
 game.run()
